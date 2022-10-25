@@ -14,7 +14,6 @@ function ImgNav({ img }: { img: ImgType }) {
     } sm:hidden xl:grid-cols-${
         img.length < 4 ? img.length : 2
     }  2xl:grid-cols-${img.length < 4 ? img.length : 4}`
-    console.log(img.length)
     return (
         <div className=''>
             <div
