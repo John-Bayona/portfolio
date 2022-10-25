@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
-const { url } = require('inspector');
-const plugin = require('tailwindcss/plugin');
+const { url } = require('inspector')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
     mode: 'jit',
@@ -10,8 +10,6 @@ module.exports = {
         './components/**/*.{js,ts,jsx,tsx}',
         './components/*.{js,ts,jsx,tsx}',
         './pages/*.{js,ts,jsx,tsx}',
-        './modules/*.{js,ts,jsx,tsx}',
-        './modules/**/*.{tsx,ts,js,jsx}',
     ],
     theme: {
         screens: {
@@ -54,18 +52,18 @@ module.exports = {
                 'checked',
             ].map((variant) =>
                 Array.isArray(variant) ? variant : [variant, `&:${variant}`]
-            );
+            )
 
             for (let [variantName, state] of pseudoVariants) {
                 addVariant(`group-peer-${variantName}`, (ctx) => {
                     let result =
-                        typeof state === 'function' ? state(ctx) : state;
+                        typeof state === 'function' ? state(ctx) : state
                     return result.replace(
                         /&(\S+)/,
                         ':merge(.peer)$1 ~ .group &'
-                    );
-                });
+                    )
+                })
             }
         }),
     ],
-};
+}

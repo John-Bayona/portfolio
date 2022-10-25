@@ -2,26 +2,139 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-	.scrollbar::-webkit-scrollbar {
-		width: 13px;
-		height: 15px;
-	}
+    .scrollbar::-webkit-scrollbar {
+        width: 13px;
+        height: 15px;
+    }
 
-	.scrollbar::-webkit-scrollbar-track {
-		border-radius: 100vh;
-		background: #f7f4ed;
-	}
+    .scrollbar::-webkit-scrollbar-track {
+        border-radius: 100vh;
+        background: #f7f4ed;
+    }
 
-	.scrollbar::-webkit-scrollbar-thumb {
-		background: #e0cbcb;
-		border-radius: 5px;
-		border: 1px solid #f6f7ed;
-	}
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: #e0cbcb;
+        border-radius: 5px;
+        border: 1px solid #f6f7ed;
+    }
 
-	.scrollbar::-webkit-scrollbar-thumb:hover {
-		background: #c0a0b9;
-	}
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #c0a0b9;
+    }
 }
 #__next {
-	min-height: 100vh;
+    min-height: 100vh;
+}
+@layer components {
+    .input-general {
+        @apply m-1 w-10/12 self-center rounded border-2 p-1 valid:border-2 invalid:border-red-500 focus:outline-blue-300  [&:not(:focus)]:invalid:animate-shake [&:not(:focus,:placeholder-shown)]:valid:border-green-500;
+    }
+    .list-globe {
+        padding: 0 1.75rem;
+        background-image: url('../public/globe.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 1.25rem;
+    }
+    .list-phone {
+        padding: 0 1.75rem;
+        background-image: url('../public/molumen_phone_icon.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 1.25rem;
+    }
+    .list-lock {
+        padding: 0 1.75rem;
+        background-image: url('../public/icons8-lock.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 1.25rem;
+    }
+    .list-speaker {
+        padding: 0 1.75rem;
+        background-image: url('../public/speaker-svgrepo-com.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 1.25rem;
+    }
+    .list-tick {
+        padding: 0 1.5rem;
+        background-image: url('../public/tick-svgrepo-com.svg');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 0.8rem;
+    }
+    .embla {
+        overflow: hidden;
+    }
+    .embla__container {
+        display: flex;
+    }
+
+    .embla__button {
+        outline: 0;
+        cursor: pointer;
+        background-color: transparent;
+        touch-action: manipulation;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 0;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+        fill: #1bcacd;
+        padding: 0;
+    }
+    .embla__button__svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .embla__button--prev {
+        left: 27px;
+    }
+
+    .embla__button--next {
+        right: 27px;
+    }
+    .embla__container {
+        display: flex;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        margin-left: -10px;
+    }
+
+    .embla__slide {
+        flex: 0 0 100%;
+        margin: auto 0;
+        position: relative;
+        padding-left: 10px;
+    }
+
+    .embla__slide__inner {
+        position: relative;
+        overflow: hidden;
+    }
+    .embla {
+        position: relative;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.bg-lineas::before {
+    background-image: url('/public/bg-tiled-blue.jpg');
+}
+html,
+body,
+#__next {
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0 auto;
 }
