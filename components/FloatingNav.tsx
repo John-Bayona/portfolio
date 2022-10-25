@@ -22,6 +22,11 @@ const FloatingNav = () => {
             slug: '/games/color-picker',
             optional: 'It has difficulties and options, wohoo',
         },
+        {
+            name: 'Tick tack toe',
+            slug: '/games/tick-tack-toe',
+            optional: 'The game you have probably played tons of times already',
+        },
     ]
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {
