@@ -52,7 +52,7 @@ function ControlledForm() {
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className='ali m-auto my-4 flex w-max flex-col flex-wrap content-center justify-center self-center'
-                action={`/api/formValidation`}
+                action='/api/formValidation'
                 encType='text/plain'
                 method='post'>
                 <Input
