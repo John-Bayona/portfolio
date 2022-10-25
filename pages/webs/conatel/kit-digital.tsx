@@ -2,7 +2,7 @@ import Image from 'next/image'
 import EmblaCarousel from '../../../components/conatel/EmblaCarousel'
 import GeneralHeader from '../../../components/conatel/GeneralHeader'
 import UncontrolledForm from '../../../components/conatel/UncontrolledForm'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 import {
     firstSlide as thirdSlide,
     secondSlide as fourthSlide,

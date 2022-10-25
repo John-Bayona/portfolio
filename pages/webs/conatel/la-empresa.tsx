@@ -3,7 +3,7 @@ import Bienvenidos from '../../../components/conatel/la-empresa/Bienvenidos'
 import Certificaciones from '../../../components/conatel/la-empresa/Certificaciones'
 import Colaboraciones from '../../../components/conatel/la-empresa/Colaboraciones'
 import Experiencia from '../../../components/conatel/la-empresa/Experiencia'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 
 function LaEmpresa() {
     return (

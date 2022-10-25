@@ -9,7 +9,7 @@ import {
     firstSlide,
     secondSlide,
 } from '../../../components/conatel/data'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
 }

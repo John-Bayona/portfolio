@@ -1,13 +1,13 @@
 import { PropsWithChildren } from 'react'
 import Navbar from './Navbar'
 
-function Layout({ children }: PropsWithChildren) {
+function ConatelLayout({ children }: PropsWithChildren) {
     return (
         <>
             <Navbar />
-            <main className=''>{children} why</main>
+            <main className=''>{children}</main>
             <div className='m-10'></div>
         </>
     )
 }
-export default Layout
+export default ConatelLayout

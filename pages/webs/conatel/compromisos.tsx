@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 
 function Compromisos() {
     return (

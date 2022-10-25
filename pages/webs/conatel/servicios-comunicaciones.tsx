@@ -4,7 +4,7 @@ import GeneralHeader from '../../../components/conatel/GeneralHeader'
 import VozDatos from '../../../components/conatel/servicios-soluciones/VozDatos'
 import SolucionesMultimedia from '../../../components/conatel/servicios-soluciones/SolucionesMultimedia'
 import FibraOpticaCableado from '../../../components/conatel/servicios-soluciones/FibraOpticaCableado'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 import { ReactElement } from 'react'
 import { serviciosNav } from '../../../components/conatel/data'
 

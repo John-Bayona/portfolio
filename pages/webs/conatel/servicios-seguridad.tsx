@@ -3,7 +3,7 @@ import type { ImgType } from '../../../components/conatel/ImgNav'
 import GeneralHeader from '../../../components/conatel/GeneralHeader'
 import Seguridad from '../../../components/conatel/servicios-soluciones/Seguridad'
 import Residencial from '../../../components/conatel/servicios-soluciones/Residencial'
-import Layout from '../../../components/conatel/Layout'
+import Layout from '../../../components/conatel/ConatelLayout'
 import { ReactElement } from 'react'
 import { seguridad } from '../../../components/conatel/data'
 
