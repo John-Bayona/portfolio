@@ -5,7 +5,7 @@ export default function getColor(type: ColorSpace, hardness: number) {
     switch (type) {
         case 'HSL':
             let HSL = [360, 100, 100]
-            let HSLOriginalColor = getCorrectColor(HSL, hardness)
+            let HSLOriginalColor = getCorrectColor(HSL, hardness, false, true)
             let HSLColorString = 'hsl' + HSLOriginalColor.originalColor
             let HSLVariants = HSLOriginalColor.totalColors.map(
                 (el) => 'hsl' + el
@@ -30,10 +30,13 @@ export default function getColor(type: ColorSpace, hardness: number) {
         case 'HEX':
             let HEX = [255, 255, 255]
             let HEXOriginalColor = getCorrectColor(HEX, hardness, true)
-            let HEXColorString = '#' + HEXOriginalColor.originalColor
-            let HEXvariants = HEXOriginalColor.totalColors.map((el) => '#' + el)
-            return { originalColor: HEXColorString, variants: HEXvariants }
+            let HEXColorString =
+                '#' + HEXOriginalColor.originalColor.toUpperCase()
+            let HEXVariants = HEXOriginalColor.totalColors.map(
+                (el) => '#' + el.toUpperCase()
+            )
 
+            return { originalColor: HEXColorString, variants: HEXVariants }
         default:
             throw Error('Unsupported type')
     }

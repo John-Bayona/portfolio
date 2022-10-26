@@ -6,7 +6,8 @@ import getRandomNumber from './getRandomNumber'
 export default function getCorrectColor(
     spaceArray: number[],
     difficulty: number,
-    isHex = false
+    isHex = false,
+    isHSL = false
 ) {
     let colorDifficulty = spaceArray.map((el) =>
         Math.floor((el * difficulty) / 2)
@@ -29,11 +30,9 @@ export default function getCorrectColor(
     if (isHex) {
         //Hex needs to have different rules for the reduce since it as different structure. (no brackets or comma)
         totalArray = variantsPlusOriginal.map((currColor) =>
-            currColor
-                .reduce((acc, el) => {
-                    return (acc += el.toString(16))
-                }, '')
-                .concat(')')
+            currColor.reduce((acc, el) => {
+                return (acc += el.toString(16))
+            }, '')
         )
     } else if (spaceArray.length === 4) {
         //This is only for RGBA values since those also need to have their last number be divided by 100.
@@ -46,6 +45,15 @@ export default function getCorrectColor(
                 }, '(')
                 .concat(')')
         )
+    } else if (isHSL) {
+        totalArray = variantsPlusOriginal.map((currColor) => {
+            return currColor
+                .reduce((acc, el, ind) => {
+                    if (ind > 0) return (acc += `${el}% `)
+                    return (acc += el + ' ')
+                }, '(')
+                .concat(')')
+        })
     } else {
         totalArray = variantsPlusOriginal.map((currColor) =>
             currColor
