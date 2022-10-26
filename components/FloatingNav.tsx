@@ -27,6 +27,12 @@ const FloatingNav = () => {
             slug: '/games/tick-tack-toe',
             optional: 'The game you have probably played tons of times already',
         },
+        {
+            name: 'Landing hotel',
+            slug: '/webs/landing-hotel',
+            optional:
+                "This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don't expect much ",
+        },
     ]
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {
