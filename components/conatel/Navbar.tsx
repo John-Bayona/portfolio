@@ -19,7 +19,7 @@ function Navbar() {
             <ul className=' mr-5 flex w-full content-between justify-between py-6 pb-2 shadow lg:text-sm'>
                 <div className='my-auto ml-9 '>
                     <li className='mx-2'>
-                        <Link href='/webs/conatel/'>
+                        <Link legacyBehavior={true} href='/webs/conatel/'>
                             <a
                                 onClick={removeNavbar}
                                 className='  text-5xl font-bold lg:text-3xl'>
@@ -52,7 +52,9 @@ function Navbar() {
                     <div className=' fixed top-0 left-0 z-10 m-0 hidden h-full w-0 overflow-hidden bg-white pt-10 shadow-md peer-checked:block peer-checked:w-2/3'>
                         <ol className=' flex-col'>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-4xl font-bold'>
@@ -62,7 +64,9 @@ function Navbar() {
                             </li>
 
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/la-empresa'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/la-empresa'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -71,7 +75,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/servicios-comunicaciones'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/servicios-comunicaciones'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -80,7 +86,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/servicios-seguridad'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/servicios-seguridad'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -89,7 +97,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/compromisos'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/compromisos'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -98,7 +108,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/contacto'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/contacto'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -107,7 +119,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/area-privada'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/area-privada'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -116,7 +130,9 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className='mt-4'>
-                                <Link href='/webs/conatel/kit-digital'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/kit-digital'>
                                     <a
                                         onClick={removeNavbar}
                                         className='m-4 p-4 text-xl'>
@@ -134,6 +150,7 @@ function Navbar() {
                             <div className='group relative inline-block'>
                                 <li className={`flex`}>
                                     <Link
+                                        legacyBehavior={true}
                                         href='/webs/conatel/la-empresa'
                                         passHref>
                                         <a className={`${underlineStyles} `}>
@@ -146,31 +163,35 @@ function Navbar() {
                                     <div>
                                         <li>
                                             <Link
+                                                legacyBehavior={true}
                                                 className=''
                                                 href='/webs/conatel/la-empresa#bienvenidos'
                                                 scroll={false}>
-                                                <a>Bienvenidos</a>
+                                                Bienvenidos
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
+                                                legacyBehavior={true}
                                                 href='/webs/conatel/la-empresa#experiencia'
                                                 scroll={false}>
-                                                <a>Experiencia</a>
+                                                Experiencia
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
+                                                legacyBehavior={true}
                                                 href='/webs/conatel/la-empresa#colaboraciones'
                                                 scroll={false}>
-                                                <a>Colaboraciones</a>
+                                                Colaboraciones
                                             </Link>
                                         </li>
                                         <li>
                                             <Link
+                                                legacyBehavior={true}
                                                 href='/webs/conatel/la-empresa#certificaciones'
                                                 scroll={false}>
-                                                <a>Certificaciones</a>
+                                                Certificaciones
                                             </Link>
                                         </li>
                                     </div>
@@ -182,7 +203,9 @@ function Navbar() {
                         <li className='mx-2'>
                             <ol>
                                 <li className='flex'>
-                                    <Link href='/webs/conatel/servicios-comunicaciones'>
+                                    <Link
+                                        legacyBehavior={true}
+                                        href='/webs/conatel/servicios-comunicaciones'>
                                         <a
                                             className={`${underlineStyles} group-hover:after:duration-700`}>
                                             Servicios de comunicaciones
@@ -192,18 +215,24 @@ function Navbar() {
                                 </li>
                                 <div className={`${hoverStyles} `}>
                                     <li>
-                                        <Link href='/webs/conatel/servicios-comunicaciones#solucion-voz-datos'>
-                                            <a>Solución de voz y datos</a>
+                                        <Link
+                                            legacyBehavior={true}
+                                            href='/webs/conatel/servicios-comunicaciones#solucion-voz-datos'>
+                                            Solución de voz y datos
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='/webs/conatel/servicios-comunicaciones#soluciones-multimedia'>
-                                            <a>Soluciones multimedia</a>
+                                        <Link
+                                            legacyBehavior={true}
+                                            href='/webs/conatel/servicios-comunicaciones#soluciones-multimedia'>
+                                            Soluciones multimedia
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href='/webs/conatel/servicios-comunicaciones#fibra-optica'>
-                                            <a>Fibra óptica y cableado</a>
+                                        <Link
+                                            legacyBehavior={true}
+                                            href='/webs/conatel/servicios-comunicaciones#fibra-optica'>
+                                            Fibra óptica y cableado
                                         </Link>
                                     </li>
                                 </div>
@@ -213,7 +242,9 @@ function Navbar() {
                     <div className='group'>
                         <ol>
                             <li className='group mx-2 flex'>
-                                <Link href='/webs/conatel/servicios-seguridad'>
+                                <Link
+                                    legacyBehavior={true}
+                                    href='/webs/conatel/servicios-seguridad'>
                                     <a className={`${underlineStyles}`}>
                                         Servicios de seguridad
                                     </a>
@@ -222,8 +253,10 @@ function Navbar() {
                             </li>
                             <div className={`${hoverStyles} `}>
                                 <li>
-                                    <Link href='/webs/conatel/servicios-seguridad#soluciones-seguridad'>
-                                        <a>Soluciones de seguridad</a>
+                                    <Link
+                                        legacyBehavior={true}
+                                        href='/webs/conatel/servicios-seguridad#soluciones-seguridad'>
+                                        Soluciones de seguridad
                                     </Link>
                                 </li>
                                 <li>
@@ -235,23 +268,31 @@ function Navbar() {
                         </ol>
                     </div>
                     <li className='group mx-2'>
-                        <Link href='/webs/conatel/compromisos'>
-                            <a className={`${underlineStyles}`}>Compromisos</a>
+                        <Link
+                            href='/webs/conatel/compromisos'
+                            className={`${underlineStyles}`}>
+                            Compromisos
                         </Link>
                     </li>
                     <li className='group mx-2'>
-                        <Link href='/webs/conatel/contacto'>
-                            <a className={`${underlineStyles}`}>Contacto</a>
+                        <Link
+                            href='/webs/conatel/contacto'
+                            className={`${underlineStyles}`}>
+                            Contacto
                         </Link>
                     </li>
                     <li className='group mx-2 '>
-                        <Link href='/webs/conatel/area-privada'>
-                            <a className={`${underlineStyles}`}>Área privada</a>
+                        <Link
+                            href='/webs/conatel/area-privada'
+                            className={`${underlineStyles}`}>
+                            Área privada
                         </Link>
                     </li>
                     <li className='group mx-2'>
-                        <Link href='/webs/conatel/kit-digital'>
-                            <a className={`${underlineStyles}`}>Kit Digital</a>
+                        <Link
+                            href='/webs/conatel/kit-digital'
+                            className={`${underlineStyles}`}>
+                            Kit Digital
                         </Link>
                     </li>
                 </div>

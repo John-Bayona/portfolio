@@ -1,5 +1,4 @@
 import React from 'react'
-let arrayNumeros = [1, 2, 3]
 const Footer = () => {
     const currentDate = new Date().toISOString().slice(0, 10)
     const [bought, setBought] = React.useState({

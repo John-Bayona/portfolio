@@ -42,13 +42,11 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className=' absolute  top-0 right-0 bottom-0 left-0 flex flex-row content-center items-center justify-center'>
-                    <Link href='/webs/landing-hotel'>
-                        <a
-                            href='/webs/landing-hotel'
-                            className='z-10 h-full bg-transparent text-black'
-                            id='main'>
-                            {svgFish}
-                        </a>
+                    <Link
+                        href='/webs/landing-hotel'
+                        className='z-10 h-full bg-transparent text-black'
+                        id='main'>
+                        {svgFish}
                     </Link>
                 </div>
                 <div className='z-50 flex flex-row self-center group-hover:text-black'>
