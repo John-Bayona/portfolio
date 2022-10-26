@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { useCallback, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
