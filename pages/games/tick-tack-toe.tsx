@@ -63,7 +63,7 @@ const TicTacToe = () => {
             timeOut = setTimeout(restart, 2000)
         }
         let isFilled = selected.every((value) => value === '✕' || value === '○')
-        if (isFilled) {
+        if (isFilled && !checkWinner(player, selected)) {
             canClick = false
             timeOut = setTimeout(() => restart(true), 2000)
         }

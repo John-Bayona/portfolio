@@ -15,7 +15,7 @@ type Options = {
 }
 function ColorPicker(props: Options) {
     const [options, setOptions] = useState<Options>(props)
-    const { selectedColorSpace, color, didWin, difficulty } = options
+    const { selectedColorSpace, color, didWin: didWin, difficulty } = options
     const wonRef = useRef<HTMLDivElement>(null)
     function handleClick(result: boolean) {
         if (!result)

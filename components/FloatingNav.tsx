@@ -61,7 +61,7 @@ const FloatingNav = () => {
                     ({ img, name, optional, original, slug }, index) => {
                         if (index < 7)
                             return (
-                                <Link key={original} href={slug}>
+                                <Link key={index} href={slug}>
                                     <div className='m-2 flex  flex-col rounded-md border-2 p-2'>
                                         <div className='flex items-center text-center'>
                                             {img ? (
