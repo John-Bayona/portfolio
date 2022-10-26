@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import EmblaCarousel from '../../../components/conatel/EmblaCarousel'
 import GeneralHeader from '../../../components/conatel/GeneralHeader'
 import UncontrolledForm from '../../../components/conatel/UncontrolledForm'

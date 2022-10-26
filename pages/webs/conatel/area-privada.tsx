@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import GeneralHeader from '../../../components/conatel/GeneralHeader'
 import { ReactElement, useState } from 'react'
 import Layout from '../../../components/conatel/ConatelLayout'
