@@ -24,7 +24,7 @@ function AreaPrivada() {
                         className='input-general mx-auto mb-4 w-56'
                         type='password'
                         name='password'
-                        pattern='[a-zA-Z0-9*]{}'
+                        pattern='[a-zA-Z0-9*]{9}'
                         placeholder='Contraseña'
                     />
                     <button
