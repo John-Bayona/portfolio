@@ -1,5 +1,5 @@
-import ControlledForm from '../../../components/conatel/UncontrolledForm/UncontrolledForm'
-import Layout from '../../../components/conatel/ConatelLayout'
+import ControlledForm from 'c/UncontrolledForm/UncontrolledForm'
+import Layout from 'c/ConatelLayout'
 import { ReactElement } from 'react'
 
 function Contacto() {

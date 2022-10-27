@@ -1,5 +1,5 @@
-import Image from "next/legacy/image";
-import GeneralHeader from '../GeneralHeader';
+import Image from 'next/legacy/image'
+import GeneralHeader from '../GeneralHeader'
 
 function VozDatos() {
     return (
@@ -116,7 +116,6 @@ function VozDatos() {
                         </div>
                         <Image
                             src='/voz-datos2.jpg'
-                            wwwwwww
                             layout='responsive'
                             width={480}
                             height={320}
@@ -126,6 +125,6 @@ function VozDatos() {
                 </div>
             </div>
         </>
-    );
+    )
 }
-export default VozDatos;
+export default VozDatos

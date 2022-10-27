@@ -1,9 +1,9 @@
 import { ReactElement } from 'react'
-import Bienvenidos from '../../../components/conatel/la-empresa/Bienvenidos'
-import Certificaciones from '../../../components/conatel/la-empresa/Certificaciones'
-import Colaboraciones from '../../../components/conatel/la-empresa/Colaboraciones'
-import Experiencia from '../../../components/conatel/la-empresa/Experiencia'
-import Layout from '../../../components/conatel/ConatelLayout'
+import Bienvenidos from 'c/la-empresa/Bienvenidos'
+import Certificaciones from 'c/la-empresa/Certificaciones'
+import Colaboraciones from 'c/la-empresa/Colaboraciones'
+import Experiencia from 'c/la-empresa/Experiencia'
+import Layout from 'c/ConatelLayout'
 
 function LaEmpresa() {
     return (

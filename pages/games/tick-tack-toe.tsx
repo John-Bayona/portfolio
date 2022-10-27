@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import checkWinner from '../../components/tick-tack-toe/checkWinner'
+import checkWinner from '~/tick-tack-toe/checkWinner'
 export type Players = '✕' | '○'
 export type Options = 'empty' | '✕' | '○'
 export type Selected = { selected: Array<Options>; player: Players }

@@ -1,12 +1,9 @@
-import Image from "next/legacy/image";
-import EmblaCarousel from '../../../components/conatel/EmblaCarousel'
-import GeneralHeader from '../../../components/conatel/GeneralHeader'
-import UncontrolledForm from '../../../components/conatel/UncontrolledForm'
-import Layout from '../../../components/conatel/ConatelLayout'
-import {
-    firstSlide as thirdSlide,
-    secondSlide as fourthSlide,
-} from '../../../components/conatel/data'
+import Image from 'next/legacy/image'
+import EmblaCarousel from 'c/EmblaCarousel'
+import GeneralHeader from 'c/GeneralHeader'
+import UncontrolledForm from 'c/UncontrolledForm'
+import Layout from 'c/ConatelLayout'
+import { firstSlide as thirdSlide, secondSlide as fourthSlide } from 'c/data'
 import { ReactElement } from 'react'
 
 const firstSlide = () => {

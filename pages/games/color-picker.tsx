@@ -1,8 +1,5 @@
 import { useRef, useState } from 'react'
-import {
-    default as getColor,
-    type ColorSpace,
-} from '../../components/color-picker/getColor'
+import { default as getColor, type ColorSpace } from '~/color-picker/getColor'
 type Color = {
     originalColor: string
     variants: string[]

@@ -1,11 +1,11 @@
-import ImgNav from '../../../components/conatel/ImgNav'
-import type { ImgType } from '../../../components/conatel/ImgNav'
-import GeneralHeader from '../../../components/conatel/GeneralHeader'
-import Seguridad from '../../../components/conatel/servicios-soluciones/Seguridad'
-import Residencial from '../../../components/conatel/servicios-soluciones/Residencial'
-import Layout from '../../../components/conatel/ConatelLayout'
+import ImgNav from 'c/ImgNav'
+import type { ImgType } from 'c/ImgNav'
+import GeneralHeader from 'c/GeneralHeader'
+import Seguridad from 'c/servicios-soluciones/Seguridad'
+import Residencial from 'c/servicios-soluciones/Residencial'
+import Layout from 'c/ConatelLayout'
 import { ReactElement } from 'react'
-import { seguridad } from '../../../components/conatel/data'
+import { seguridad } from 'c/data'
 
 function ServiciosSeguridad() {
     return (

@@ -1,7 +1,7 @@
 import Image from 'next/legacy/image'
-import GeneralHeader from '../../../components/conatel/GeneralHeader'
-import { ReactElement, useState } from 'react'
-import Layout from '../../../components/conatel/ConatelLayout'
+import GeneralHeader from 'c/GeneralHeader'
+import { ReactElement } from 'react'
+import Layout from 'c/ConatelLayout'
 
 function AreaPrivada() {
     return (

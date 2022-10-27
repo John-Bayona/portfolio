@@ -1,15 +1,10 @@
 import { NextPage } from 'next'
 import { ReactElement, ReactNode } from 'react'
-import EmblaCarousel from '../../../components/conatel/EmblaCarousel'
-import GeneralHeader from '../../../components/conatel/GeneralHeader'
-import ImgNav from '../../../components/conatel/ImgNav'
-import {
-    seguridad,
-    serviciosNav,
-    firstSlide,
-    secondSlide,
-} from '../../../components/conatel/data'
-import Layout from '../../../components/conatel/ConatelLayout'
+import EmblaCarousel from 'c/EmblaCarousel'
+import GeneralHeader from 'c/GeneralHeader'
+import ImgNav from 'c/ImgNav'
+import { seguridad, serviciosNav, firstSlide, secondSlide } from 'c/data'
+import Layout from 'c/ConatelLayout'
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
 }

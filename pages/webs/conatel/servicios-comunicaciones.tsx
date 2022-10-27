@@ -1,12 +1,12 @@
-import ImgNav from '../../../components/conatel/ImgNav'
-import type { ImgType } from '../../../components/conatel/ImgNav'
-import GeneralHeader from '../../../components/conatel/GeneralHeader'
-import VozDatos from '../../../components/conatel/servicios-soluciones/VozDatos'
-import SolucionesMultimedia from '../../../components/conatel/servicios-soluciones/SolucionesMultimedia'
-import FibraOpticaCableado from '../../../components/conatel/servicios-soluciones/FibraOpticaCableado'
-import Layout from '../../../components/conatel/ConatelLayout'
+import ImgNav from 'c/ImgNav'
+import type { ImgType } from 'c/ImgNav'
+import GeneralHeader from 'c/GeneralHeader'
+import VozDatos from 'c/servicios-soluciones/VozDatos'
+import SolucionesMultimedia from 'c/servicios-soluciones/SolucionesMultimedia'
+import FibraOpticaCableado from 'c/servicios-soluciones/FibraOpticaCableado'
+import Layout from 'c/ConatelLayout'
 import { ReactElement } from 'react'
-import { serviciosNav } from '../../../components/conatel/data'
+import { serviciosNav } from 'c/data'
 
 function ServiciosComunicaciones() {
     return (
