@@ -6,10 +6,12 @@ import FloatingNav from '../FloatingNav'
 export default function HotelLayout({ children }: PropsWithChildren) {
     return (
         <>
-            <Navbar />
-            {children}
-            <Footer />
-            <FloatingNav />
+            <main>
+                <Navbar />
+                {children}
+                <Footer />
+                <FloatingNav />
+            </main>
         </>
     )
 }

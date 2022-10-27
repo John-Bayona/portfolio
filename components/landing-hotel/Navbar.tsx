@@ -28,9 +28,18 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </nav>
-                    <div className='group relative m-1 ml-2 inline-block h-4 group-hover:text-black'>
-                        {phoneImage}
-                        <span className="after:content-[' '] afterr:border-t-transparent color-white absolute top-full left-1/2 z-50 -ml-5 mt-2 hidden  rounded-md bg-black p-2  text-center opacity-0 duration-100 after:absolute after:left-1/4 after:-ml-1 after:border-4 after:border-solid after:border-r-transparent after:border-b-black after:border-l-transparent after:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <div className=' relative m-1 ml-2 inline-block h-4 group-hover:text-black'>
+                        <a
+                            href='#'
+                            className='peer relative inline-block text-blue-500 underline duration-300 hover:text-red-500'>
+                            Link with top tooltip
+                        </a>
+                        <span className="absolute -left-5 -top-2 hidden w-48 -translate-y-full rounded-lg bg-gray-700 px-2 py-1 text-center text-sm text-white after:absolute after:left-1/2 after:top-[100%] after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-b-transparent after:border-t-gray-700 after:content-[''] peer-hover:flex">
+                            This is some extra useful information
+                        </span>
+
+                        <div className='peer'>{phoneImage}</div>
+                        <span className="after:content-[' '] color-white top-full left-1/2 z-50 -ml-5 mt-2 hidden rounded-md bg-white p-2 text-center  opacity-0 duration-100 after:absolute after:left-1/4 after:-ml-1 after:border-4 after:border-solid after:border-t-transparent after:border-r-transparent after:border-b-black after:border-l-transparent after:opacity-100 ">
                             900-00-00-00
                         </span>
                     </div>
