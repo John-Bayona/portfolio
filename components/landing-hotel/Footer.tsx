@@ -1,40 +1,43 @@
-import React from 'react'
+import { useState } from 'react'
+const currentDate = new Date().toISOString().slice(0, 10)
+type BoughtState = {
+    adults: number
+    children: number
+    hotel: 'Tokoyama' | 'Tokyo' | 'Nagashima'
+    date: string | Date
+}
+type Kind = keyof BoughtState
+type Operation = BoughtState[Kind]
 const Footer = () => {
-    const currentDate = new Date().toISOString().slice(0, 10)
-    const [bought, setBought] = React.useState({
+    const [bought, setBought] = useState({
         adults: 1,
         children: 0,
-        hotel: '',
-        date: '',
+        hotel: 'Tokoyama',
+        date: currentDate,
     })
 
-    function stateUpdate(grownup: 'adults' | 'children', sum: 'plus' | 'less') {
-        const adults = grownup === 'adults' ? 0 : 1
-        const isSum = sum === 'plus' ? true : false
-        // newState[adults] = isSum ? newState[adults] + 1 : newState[adults] - 1;
-        setBought((previous) => {
-            const previousGrownup = previous[grownup]
-            if (previousGrownup === 0 && sum === 'less') return previous
-            return {
-                ...previous,
-                [grownup]:
-                    sum === 'plus' ? previousGrownup + 1 : previousGrownup - 1,
-            }
-        })
+    function stateUpdate(type: Kind, operation: Operation) {
+        console.log({ type, operation })
+        if (typeof operation === 'string') {
+            return setBought((previous) => {
+                console.log({ ...previous, [type]: operation })
+                return { ...previous, [type]: operation }
+            })
+        }
+        if (
+            typeof operation === 'number' &&
+            (type === 'adults' || type === 'children')
+        ) {
+            let computed = bought[type] + operation
+            if (computed < 0) return
+            setBought((previous) => {
+                return {
+                    ...previous,
+                    [type]: computed,
+                }
+            })
+        }
     }
-
-    const storeData = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-        type: string
-    ) => {
-        setBought((oldie) => {
-            return {
-                ...oldie,
-                [type]: event.target.value,
-            }
-        })
-    }
-
     const bookHotel = () => {
         let displayText = ''
         if (bought.adults > 0) {
@@ -68,12 +71,30 @@ const Footer = () => {
                         className=' rounded-sm border-2 border-gray-500'
                         name='hotels'
                         id='hoteles'
-                        onChange={(event) => {
-                            storeData(event, 'hoteles')
-                        }}>
-                        <option value='Tokoyama'>Tokoyama Hotel </option>
-                        <option value='Nagashima'>Nagashima Hotel </option>
-                        <option value='Tokyo'>Tokyo Hotel </option>
+                        onChange={(event) =>
+                            stateUpdate('hotel', event.target.value as Kind)
+                        }>
+                        <option
+                            onClick={() => {
+                                stateUpdate('hotel', 'Tokoyama')
+                            }}
+                            value='Tokoyama'>
+                            Tokoyama Hotel{' '}
+                        </option>
+                        <option
+                            onClick={() => {
+                                stateUpdate('hotel', 'Nagashima')
+                            }}
+                            value='Nagashima'>
+                            Nagashima Hotel{' '}
+                        </option>
+                        <option
+                            onClick={() => {
+                                stateUpdate('hotel', 'Tokyo')
+                            }}
+                            value='Tokyo'>
+                            Tokyo Hotel{' '}
+                        </option>
                     </select>
                 </div>
                 <div>
@@ -85,7 +106,7 @@ const Footer = () => {
                         id='fechas'
                         className='ml-1 rounded-sm border-2 border-gray-500'
                         onChange={(event) => {
-                            storeData(event, 'date')
+                            stateUpdate('date', event.target.value)
                         }}
                     />
                 </div>
@@ -94,7 +115,7 @@ const Footer = () => {
                     <div className='flex flex-row self-center'>
                         <button
                             className=' border-none bg-gray-400 p-1'
-                            onClick={() => stateUpdate('adults', 'plus')}>
+                            onClick={() => stateUpdate('adults', 1)}>
                             +
                         </button>
                         <button className='bg-white p-1'>
@@ -102,7 +123,7 @@ const Footer = () => {
                         </button>
                         <button
                             className=' h-1/2 border-none bg-gray-400 p-1'
-                            onClick={() => stateUpdate('adults', 'less')}>
+                            onClick={() => stateUpdate('adults', -1)}>
                             -
                         </button>
                     </div>
@@ -112,7 +133,7 @@ const Footer = () => {
                     <div className='flex flex-row self-center'>
                         <button
                             className=' border-none bg-gray-400 p-1'
-                            onClick={() => stateUpdate('children', 'plus')}>
+                            onClick={() => stateUpdate('children', 1)}>
                             +
                         </button>
                         <button className='bg-white p-1'>
@@ -120,7 +141,7 @@ const Footer = () => {
                         </button>
                         <button
                             className=' border-none bg-gray-400 p-1'
-                            onClick={() => stateUpdate('children', 'less')}>
+                            onClick={() => stateUpdate('children', -1)}>
                             -
                         </button>
                     </div>
