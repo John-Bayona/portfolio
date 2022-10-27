@@ -41,7 +41,11 @@ function ColorPicker(props: Options) {
                             difficulty,
                         })
                     }}
-                    className='mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 py-1 hover:font-semibold'>
+                    className={`mx-2 mb-4 mt-4 rounded-md border-2 ${
+                        selectedColorSpace === 'HSL'
+                            ? 'bg-gradient-to-br from-red-500 via-green-500 to-blue-500'
+                            : ''
+                    } px-4 py-1 hover:bg-gray-400`}>
                     HSL
                 </div>
                 <div
@@ -53,7 +57,11 @@ function ColorPicker(props: Options) {
                             difficulty,
                         })
                     }}
-                    className='mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 py-1 hover:font-semibold'>
+                    className={`mx-2 mb-4 mt-4 rounded-md border-2 ${
+                        selectedColorSpace === 'RGB'
+                            ? 'bg-gradient-to-br from-red-500 via-green-500 to-blue-500'
+                            : ''
+                    } px-4 py-1 hover:bg-gray-400`}>
                     RGB
                 </div>
                 <div
@@ -65,7 +73,11 @@ function ColorPicker(props: Options) {
                             difficulty,
                         })
                     }}
-                    className='mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 py-1 hover:font-semibold'>
+                    className={`mx-2 mb-4 mt-4 rounded-md border-2 ${
+                        selectedColorSpace === 'RGBA'
+                            ? 'bg-gradient-to-br from-red-500/20 via-green-500/50 to-blue-500/95'
+                            : ''
+                    } px-4 py-1 hover:bg-gray-400`}>
                     RGBA
                 </div>
                 <div
@@ -77,13 +89,17 @@ function ColorPicker(props: Options) {
                             difficulty,
                         })
                     }}
-                    className='mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 py-1 hover:font-semibold'>
+                    className={`mx-2 mb-4 mt-4 rounded-md border-2 ${
+                        selectedColorSpace === 'HEX'
+                            ? 'bg-gradient-to-br from-red-500 via-green-500 to-blue-500'
+                            : ''
+                    } px-4 py-1 hover:bg-gray-400`}>
                     HEX
                 </div>
             </div>
             <div>
                 <div
-                    className='py-1-mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 hover:font-semibold'
+                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -95,7 +111,7 @@ function ColorPicker(props: Options) {
                     Fácil
                 </div>
                 <div
-                    className='py-1-mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 hover:font-semibold'
+                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -107,7 +123,7 @@ function ColorPicker(props: Options) {
                     Intermedio
                 </div>
                 <div
-                    className='py-1-mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 hover:font-semibold'
+                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -119,7 +135,7 @@ function ColorPicker(props: Options) {
                     Difícil
                 </div>
                 <div
-                    className='py-1-mb-4 rounded-md border-2 border-cyan-200 bg-blue-400 px-4 hover:font-semibold'
+                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -139,7 +155,7 @@ function ColorPicker(props: Options) {
                     if (el === color.originalColor)
                         return (
                             <li
-                                className='list-inside list-disc'
+                                className='m-2 list-inside text-center hover:text-blue-500'
                                 onClick={() => handleClick(true)}
                                 key={el}>
                                 {el}
@@ -147,7 +163,7 @@ function ColorPicker(props: Options) {
                         )
                     return (
                         <li
-                            className='list-inside list-disc'
+                            className='m-2 list-inside text-center hover:text-blue-500'
                             onClick={() => handleClick(false)}
                             key={el}>
                             {el}
@@ -165,6 +181,12 @@ function ColorPicker(props: Options) {
                     Has fallado!
                 </div>
             )}
+            <div className='mt-2'>
+                <p>
+                    This game has difficulty but it only makes it so on average
+                    it gets harder, so it can be tricky!
+                </p>
+            </div>
         </div>
     )
 }
