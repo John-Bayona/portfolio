@@ -39,6 +39,12 @@ const FloatingNav = () => {
             optional:
                 "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
         },
+        {
+            name: 'Processing for a friend',
+            slug: '/games/processing',
+            optional:
+                'This was made for a friend that had to do an art exposition and wanted it to be digitally made so I made her life a little bit easier by adding this with a palette she created. Later I added a perspective grid to do the same but without generating code for processing.',
+        },
     ]
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {
@@ -76,7 +82,7 @@ const FloatingNav = () => {
                                                     className='mr-2 w-24'
                                                 />
                                             ) : (
-                                                <div className='my-auto mr-2 flex h-24 w-24 items-center justify-center bg-white'>
+                                                <div className='my-auto mr-2 flex h-24 w-24 shrink-0 items-center justify-center bg-white'>
                                                     {name
                                                         .split(' ')
                                                         .map((el) =>
