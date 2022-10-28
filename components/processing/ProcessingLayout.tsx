@@ -2,7 +2,7 @@ import { createContext, PropsWithChildren } from 'react'
 import Link from 'next/link'
 import { useState } from 'react'
 import React from 'react'
-const colores = [
+export const colores = [
     { nombre: 'Blanco', color: 'rgb(255,255,255)' },
     { nombre: 'amarillo', color: 'rgb(255, 200, 0)' },
     { nombre: 'amarillo verdoso', color: 'rgb(205, 200, 0)' },

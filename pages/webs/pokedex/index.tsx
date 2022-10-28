@@ -1,6 +1,6 @@
 import { useEffect, useState, type FC } from 'react'
 import { Bulbasaur } from '~/pokedex/initialPokemon'
-import PokemonDisplay from '~/pokedex/PokemonDisplay'
+import PokemonDisplay from '~/processing/PokemonDisplay'
 import DetailedPokemon from '~/pokedex/DetailedPokemon'
 import ViewSelector from '~/pokedex/ViewSelector'
 export type View = 'gallery' | 'list' | 'table'
