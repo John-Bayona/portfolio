@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image'
+import Image from "next/image";
 import EmblaCarousel from 'c/EmblaCarousel'
 import GeneralHeader from 'c/GeneralHeader'
 import UncontrolledForm from 'c/UncontrolledForm'
@@ -18,7 +18,10 @@ const firstSlide = () => {
                     height='150'
                     width='150'
                     className='mx-auto'
-                />
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto"
+                    }} />
                 <h2 className='mt-2 font-semibold text-blue-900'>
                     Comunicaciones seguras
                 </h2>
@@ -30,7 +33,7 @@ const firstSlide = () => {
                 <p className='font-bold'>desde 90€ por usuario.</p>
             </div>
         </div>
-    )
+    );
 }
 const secondSlide = () => {
     return (

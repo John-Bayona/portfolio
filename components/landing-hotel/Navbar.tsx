@@ -45,7 +45,8 @@ const Navbar = () => {
                     <Link
                         href='/webs/landing-hotel'
                         className='z-10 h-full bg-transparent text-black'
-                        id='main'>
+                        id='main'
+                        legacyBehavior>
                         {svgFish}
                     </Link>
                 </div>
@@ -76,7 +77,7 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar

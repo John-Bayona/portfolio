@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { useState } from 'react'
 type ProjectType = {
@@ -73,7 +74,7 @@ const FloatingNav = () => {
                     ({ img, name, optional, original, slug }, index) => {
                         if (index < 7)
                             return (
-                                <Link key={index} href={slug}>
+                                <Link key={index} href={slug} legacyBehavior>
                                     <div className='m-2 flex  flex-col rounded-md border-2 p-2'>
                                         <div className='flex items-center text-center'>
                                             {img ? (
@@ -105,12 +106,12 @@ const FloatingNav = () => {
                                         </span>
                                     </div>
                                 </Link>
-                            )
+                            );
                     }
                 )}
             </div>
         </div>
-    )
+    );
 }
 
 export default FloatingNav

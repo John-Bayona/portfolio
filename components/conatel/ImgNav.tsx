@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 type ImgObj = {
     text: string
@@ -30,13 +30,16 @@ function ImgNav({ img }: { img: ImgType }) {
                                 src={imgSrc}
                                 width='150'
                                 height={150}
-                            />
+                                style={{
+                                    maxWidth: "100%",
+                                    height: "auto"
+                                }} />
                             <p className='text-lg font-bold '>{text}</p>
                         </a>
-                    )
+                    );
                 })}
             </div>
         </div>
-    )
+    );
 }
 export default ImgNav

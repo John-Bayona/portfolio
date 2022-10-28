@@ -1,7 +1,7 @@
 import Navbar from './Navbar'
 import { PropsWithChildren } from 'react'
 import Footer from './Footer'
-import FloatingNav from '../FloatingNav'
+import FloatingNav from '../../app/FloatingNav'
 
 export default function HotelLayout({ children }: PropsWithChildren) {
     return (
