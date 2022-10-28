@@ -1,10 +1,14 @@
+'use client'
 import { useRef, useState } from 'react'
-import { default as getColor, type ColorSpace } from '~/color-picker/getColor'
-type Color = {
+import {
+    default as getColor,
+    type ColorSpace,
+} from 'app/games/color-picker/getColor'
+export type Color = {
     originalColor: string
     variants: string[]
 }
-type Options = {
+export type Options = {
     selectedColorSpace: ColorSpace
     color: Color
     didWin: boolean | null
@@ -189,14 +193,3 @@ function ColorPicker(props: Options) {
 }
 
 export default ColorPicker
-
-export async function getServerSideProps(context: any) {
-    return {
-        props: {
-            color: getColor('HSL', 0.5),
-            selectedColorSpace: 'HSL',
-            didWin: null,
-            difficulty: 0.5,
-        },
-    }
-}
