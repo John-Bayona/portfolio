@@ -17,10 +17,8 @@ const Footer = () => {
     })
 
     function stateUpdate(type: Kind, operation: Operation) {
-        console.log({ type, operation })
         if (typeof operation === 'string') {
             return setBought((previous) => {
-                console.log({ ...previous, [type]: operation })
                 return { ...previous, [type]: operation }
             })
         }

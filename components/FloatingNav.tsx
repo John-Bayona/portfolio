@@ -33,6 +33,12 @@ const FloatingNav = () => {
             optional:
                 "This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don't expect much ",
         },
+        {
+            name: 'Pokedex',
+            slug: '/webs/pokedex',
+            optional:
+                "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
+        },
     ]
     const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => {

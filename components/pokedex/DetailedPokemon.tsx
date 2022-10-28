@@ -1,0 +1,236 @@
+import { useState, type FC, useEffect } from 'react'
+import bulbasaur, {
+    type Sprites,
+    Stats,
+    Abilities,
+    Types,
+    Bulbasaur,
+    ID,
+} from './initialPokemon'
+import toCap from './toCap'
+type StatePokemon = {
+    name: string
+    height: number
+    types: Types
+    abilities: Abilities
+    stats: Stats
+    sprites: Sprites
+    id: ID
+}
+type DetailedPokemon = {
+    selectedPokemon: string
+}
+// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png
+
+const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
+    /**
+     * Important Structure For Reference: {
+     * .weight,
+     * .height,
+     * .types[0-1].type
+     * .stats[0-5].base_stat(value of the stat).name (of the previous value, hp, atk, etc)
+     * abilities[0-1].name,
+     * .sprites.
+     *  back_default
+     *  back_shiny
+     *  front_shiny
+     *  back_female?
+     *  back_shiny_female?
+     *  front_shiny_female?
+     *
+     *  other.
+     *    official_artwork.front_default -> Fixed URL "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/ Number Of The Pokemon (aka .id).png"
+     *    dream_world.front_dafault (Also fixed URL,"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/ .id the same.svg")
+     *  version.
+     *    generation-i to generation-viii in roman numbers, each having fixed URLs and containing .[name of the generation].front_default
+     *
+     * }
+     *
+     * For extra details: Check ./DetailedPokemon.tsx
+     */
+    const [currentPokemon, setCurrentPokemon] = useState<
+        Bulbasaur | StatePokemon
+    >(bulbasaur)
+
+    useEffect(() => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`)
+            .then((response) => response.text())
+            .then((data) => {
+                // console.log(data)
+                return JSON.parse(data)
+            })
+            .then(
+                ({
+                    name,
+                    height,
+                    types,
+                    abilities,
+                    stats,
+                    sprites,
+                    id,
+                }: StatePokemon) => {
+                    setCurrentPokemon({
+                        name,
+                        height,
+                        types,
+                        abilities,
+                        stats,
+                        sprites,
+                        id,
+                    })
+                    setIsHidden(false)
+                }
+            )
+    }, [selectedPokemon])
+
+    const [isHidden, setIsHidden] = useState(true)
+    // const [sprites, setSprites] = useState({
+    //     back_default:
+    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png',
+    //     back_female: null,
+    //     back_shiny:
+    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png',
+    //     back_shiny_female: null,
+    //     front_default:
+    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
+    //     front_female: null,
+    //     front_shiny:
+    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png',
+    //     front_shiny_female: null,
+    // })
+
+    return (
+        <aside
+            className={`bg-white/80 md:visible md:fixed md:right-0 md:ml-0 md:mt-auto md:flex md:h-screen md:w-[32%] md:rounded-r-lg md:border-2 md:border-cyan-600
+        ${
+            isHidden
+                ? 'hidden'
+                : ' bg-mainbg fixed top-0 order-1  m-0 flex h-full w-full flex-col overflow-hidden p-0 '
+        }`}>
+            <div className='flex justify-center '>
+                <img
+                    className=' max-h-48 self-center shadow-[0_35px_20px_-20px_rgba(255,255,255,0.5)]  sm:max-h-72'
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${currentPokemon.id}.png`}
+                />
+            </div>
+            <main className=' mt-5 flex flex-col text-center'>
+                <p>
+                    <strong className=' font-bold'>Name:</strong>
+                    {toCap(currentPokemon.name)}
+                </p>
+                <p>
+                    <strong className=' font-bold'>Height:</strong>
+                    {currentPokemon.height / 10}
+                </p>
+                <p>
+                    <strong className=' font-bold'>
+                        {currentPokemon.types[1] ? 'Types: ' : 'Type: '}
+                    </strong>
+                    {currentPokemon.types[1]
+                        ? `${toCap(currentPokemon.types[0].type.name)},  ${
+                              currentPokemon.types[1].type.name
+                          }`
+                        : toCap(currentPokemon.types[0].type.name)}
+                </p>
+                <p>
+                    <strong className=' font-bold'>
+                        {currentPokemon.abilities[1]
+                            ? 'Abilities: '
+                            : 'Ability: '}
+                    </strong>
+                    {currentPokemon.abilities[1]
+                        ? `${toCap(
+                              currentPokemon.abilities[0].ability.name
+                          )}, ${currentPokemon.abilities[1].ability.name}`
+                        : toCap(currentPokemon.abilities[0].ability.name)}
+                </p>
+                <p>
+                    <strong className=' font-bold'>Stats: </strong>
+                    {currentPokemon.stats.map((currentStat) => {
+                        //Recorre el array de los stats sacando el nombre del atributo (hp, ataque, defensa, especiales, velocidad) y el valor
+                        return (
+                            <p>
+                                <strong className='font-medium'>
+                                    {toCap(currentStat.stat.name)}:
+                                </strong>
+                                {currentStat.base_stat}
+                            </p>
+                        )
+                    })}
+                </p>
+
+                {/* <button
+                    onClick={console.log(currentPokemon.sprites)}
+                    className=" hover:bg mt-5 w-fit self-center rounded-md border-2 border-cyan-500 bg-cyan-100 bg-opacity-70  p-2 font-extrabold shadow-[0_-35px_10px_-10px_rgba(255,255,255,0.2)]"
+                >
+                    Show extra sprites
+                </button> */}
+                <div className='overflow-none mt-5 flex w-full snap-mandatory flex-row place-content-between bg-cyan-100 bg-opacity-60  md:overflow-auto'>
+                    {currentPokemon.sprites.front_default && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.back_default && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.front_female && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.back_female && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.front_shiny && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.back_shiny && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.front_shiny_female && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                    {currentPokemon.sprites.back_shiny_female && (
+                        <img
+                            className='snap-x'
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female${currentPokemon.id}.png`}
+                            alt=''
+                        />
+                    )}
+                </div>
+                <button
+                    onClick={() => setIsHidden(true)}
+                    className=' hover:bg mt-5 w-fit self-center rounded-md border-2 border-cyan-600 bg-cyan-200  bg-opacity-70 p-2 pr-4 pl-4 font-extrabold md:hidden'>
+                    Close
+                </button>
+            </main>
+        </aside>
+    )
+}
+
+export default DetailedPokemon
