@@ -19,7 +19,7 @@ const App = (props: Props) => {
     }
 
     return (
-        <div className='absolute top-0 mt-[-4px] w-full bg-green-200'>
+        <div className='absolute top-0 mt-[-4px]  w-auto bg-green-200'>
             <ViewSelector stateUpdate={stateUpdate} currentState={view} />
             <div className='flex flex-row'>
                 <PokemonDisplay

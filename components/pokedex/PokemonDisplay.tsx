@@ -18,7 +18,7 @@ const PokemonDisplay: FC<PokemonSelector> = ({
         ${currentState === 'gallery' ? '' : '' /*Display for gallery type*/}
         ${currentState === 'table' ? 'flex ' : '' /*Display for Table type */}
         ${currentState === 'list' ? '' : '' /**Display for List type */}
-    bg-mainbg ml-1 mr-1 mb-1 grid grid-cols-12 rounded-r-lg rounded-bl-lg border-2 border-double border-cyan-800 2xl:grid-cols-9 xl:grid-cols-7 lg:grid-cols-5 md:w-2/3 md:grid-cols-3 sm:grid-cols-4`}>
+    bg-mainbg ml-1 mb-1 grid grid-cols-12 rounded-r-lg rounded-bl-lg border-2 border-double border-cyan-800 2xl:grid-cols-9 xl:grid-cols-7 lg:grid-cols-5 md:w-2/3 md:grid-cols-3 sm:grid-cols-4`}>
             {pokemons.map((pokemon, index) => {
                 return (
                     <div

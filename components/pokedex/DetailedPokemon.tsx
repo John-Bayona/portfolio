@@ -101,7 +101,7 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
 
     return (
         <aside
-            className={`bg-white/80 md:visible md:fixed md:right-0 md:ml-0 md:mt-auto md:flex md:h-screen md:w-[32%] md:rounded-r-lg md:border-2 md:border-cyan-600
+            className={`bg-white/80 md:visible md:fixed md:right-0 md:ml-0 md:mt-auto md:flex md:h-screen md:w-1/3 md:rounded-r-lg md:border-2 md:border-cyan-600
         ${
             isHidden
                 ? 'hidden'
@@ -225,7 +225,7 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                 </div>
                 <button
                     onClick={() => setIsHidden(true)}
-                    className=' hover:bg mt-5 w-fit self-center rounded-md border-2 border-cyan-600 bg-cyan-200  bg-opacity-70 p-2 pr-4 pl-4 font-extrabold md:hidden'>
+                    className='mt-5 w-fit self-center rounded-md border-2 border-cyan-600 bg-cyan-200 bg-opacity-70  p-2 pr-4 pl-4 font-extrabold hover:bg-cyan-500 md:hidden'>
                     Close
                 </button>
             </main>
