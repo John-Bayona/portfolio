@@ -6,7 +6,6 @@ import ViewSelector from '~/pokedex/ViewSelector'
 export type View = 'gallery' | 'list' | 'table'
 type Props = { allPokemon: Bulbasaur[] }
 const App = (props: Props) => {
-    console.log(props)
     const [view, setView] = useState<View>('gallery')
     const stateUpdate = (view: View) => {
         setView(view)

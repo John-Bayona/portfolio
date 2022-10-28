@@ -56,7 +56,6 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`)
             .then((response) => response.text())
             .then((data) => {
-                // console.log(data)
                 return JSON.parse(data)
             })
             .then(
@@ -84,20 +83,6 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
     }, [selectedPokemon])
 
     const [isHidden, setIsHidden] = useState(true)
-    // const [sprites, setSprites] = useState({
-    //     back_default:
-    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png',
-    //     back_female: null,
-    //     back_shiny:
-    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/1.png',
-    //     back_shiny_female: null,
-    //     front_default:
-    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png',
-    //     front_female: null,
-    //     front_shiny:
-    //         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png',
-    //     front_shiny_female: null,
-    // })
 
     return (
         <aside
@@ -158,13 +143,6 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                         )
                     })}
                 </p>
-
-                {/* <button
-                    onClick={console.log(currentPokemon.sprites)}
-                    className=" hover:bg mt-5 w-fit self-center rounded-md border-2 border-cyan-500 bg-cyan-100 bg-opacity-70  p-2 font-extrabold shadow-[0_-35px_10px_-10px_rgba(255,255,255,0.2)]"
-                >
-                    Show extra sprites
-                </button> */}
                 <div className='overflow-none mt-5 flex w-full snap-mandatory flex-row place-content-between bg-cyan-100 bg-opacity-60  md:overflow-auto'>
                     {currentPokemon.sprites.front_default && (
                         <img

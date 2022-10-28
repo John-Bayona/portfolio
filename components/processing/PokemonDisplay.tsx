@@ -11,7 +11,6 @@ const PokemonDisplay: FC<PokemonSelector> = ({
     currentState,
     allPokemon: pokemons,
 }) => {
-    console.log(pokemons)
     return (
         <div
             className={`mx-auto w-screen md:mr-0 md:overflow-auto md:rounded-none

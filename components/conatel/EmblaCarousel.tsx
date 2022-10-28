@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image'
 import { useCallback, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
@@ -41,11 +41,7 @@ function EmblaCarousel({ props: [bgImage, structure] }: Elements) {
                         className='fixed block w-full object-cover object-center'
                     />
                     <div className='embla__viewport text-xl' ref={emblaRef}>
-                        <div
-                            className='embla__container'
-                            // onMouseLeave={test}
-                            // onMouseUp={test}
-                        >
+                        <div className='embla__container'>
                             <div className='embla__slide grid place-content-center'>
                                 {structure[0].structure}
                             </div>

@@ -36,7 +36,6 @@ export default function Page() {
         ole.forEach(({ color, coordinates }) => {
             if (color != 'rgb(255,255,255)') {
                 text += `fill${color.slice(3)};\n`
-                console.log(text)
                 coordinates.forEach(([x, y]) => {
                     text += `rect(${x}, ${y}, 20, 20);\n`
                 })

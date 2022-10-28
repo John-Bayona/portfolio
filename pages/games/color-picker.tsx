@@ -193,7 +193,6 @@ export default ColorPicker
 export async function getServerSideProps(context: any) {
     return {
         props: {
-            //[[],[],[]]
             color: getColor('HSL', 0.5),
             selectedColorSpace: 'HSL',
             didWin: null,
