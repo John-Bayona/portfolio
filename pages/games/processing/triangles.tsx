@@ -5,7 +5,6 @@ import { ReactElement } from 'react'
 import { ColorContext } from '~/processing/ProcessingLayout'
 import { useContext } from 'react'
 export default function triangles() {
-    // let colorActual = useContext(ColorContext)
     let colorActual = useContext(ColorContext)
 
     let triangleRef = useRef<HTMLDivElement>(null)
