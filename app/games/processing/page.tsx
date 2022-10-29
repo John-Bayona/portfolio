@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from 'react'
-import { useState } from 'react'
-import ProcessingLayout from '~/processing/ProcessingLayout'
-import type { ReactElement } from 'react'
-import generateNormalGrid from '~/processing/generateNormalGrid'
-import { ColorContext } from '~/processing/ProcessingLayout'
+'use client'
+import React, { useContext } from 'react'
+import generateNormalGrid from './generateNormalGrid'
+import { ColorContext } from './layout'
 import { useRef } from 'react'
-import { colores } from '~/processing/ProcessingLayout'
+import { colores } from './colores'
 export default function Page() {
     let rootRef = useRef<HTMLDivElement>(null)
     let colorActual = useContext(ColorContext)
@@ -53,32 +51,26 @@ export default function Page() {
             <div className='content-left flex h-[1250px] w-[1250px] flex-wrap'>
                 {arrayPosiciones?.map(({ x, y }, indiceArrayPosiciones) => {
                     return (
-                        <>
-                            <div
-                                key={indiceArrayPosiciones}
-                                className={`-mb-1 h-[50px] w-[50px] border border-black text-center `}
-                                data-y={x}
-                                data-x={y}
-                                data-color='rgb(255,255,255)'
-                                id={`${indiceArrayPosiciones}`}
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    cambiarColor(indiceArrayPosiciones)
-                                }}
-                                onDragStart={() => {
-                                    cambiarColor(indiceArrayPosiciones)
-                                }}>
-                                {indiceArrayPosiciones + 1}
-                            </div>
-                        </>
+                        <div
+                            key={`${x}:${y}:${indiceArrayPosiciones}`}
+                            className={`-mb-1 h-[50px] w-[50px] border border-black text-center `}
+                            data-y={x}
+                            data-x={y}
+                            data-color='rgb(255,255,255)'
+                            id={`${indiceArrayPosiciones}`}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                cambiarColor(indiceArrayPosiciones)
+                            }}
+                            onDragStart={() => {
+                                cambiarColor(indiceArrayPosiciones)
+                            }}>
+                            {indiceArrayPosiciones + 1}
+                        </div>
                     )
                 })}
             </div>
             <button onClick={() => generateProcessing()}>Hazme click</button>
         </>
     )
-}
-
-Page.getLayout = function getLayout(page: ReactElement) {
-    return <ProcessingLayout>{page}</ProcessingLayout>
 }

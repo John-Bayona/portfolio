@@ -1,5 +1,6 @@
+'use client'
 import { useEffect, useState } from 'react'
-import checkWinner from '~/tick-tack-toe/checkWinner'
+import checkWinner from 'app/games/tick-tack-toe/checkWinner'
 export type Players = '✕' | '○'
 export type Options = 'empty' | '✕' | '○'
 export type Selected = { selected: Array<Options>; player: Players }

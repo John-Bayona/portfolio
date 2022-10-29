@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { Bulbasaur } from '../pokedex/initialPokemon'
+import { Bulbasaur } from './initialPokemon'
 
 type PokemonSelector = {
     setSelectedPokemon: (currentPokemon: string) => void

@@ -1,4 +1,4 @@
-import type { Options, Players } from '~g/tick-tack-toe'
+import type { Options, Players } from 'app/games/tick-tack-toe/page'
 type WinnerFunction = (checkNextPlayer: Players, state: Options[]) => boolean
 
 const checkWinner: WinnerFunction = (checkNextPlayer, state) => {
