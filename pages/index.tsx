@@ -28,12 +28,10 @@ const Home: NextPage = () => {
                             <Link href='/games/color-picker'>Color picker</Link>
                         </li>
                         <li>
-                            <Link href='/games/tick-tack-toe'>
-                                Tick tack toe
-                            </Link>
+                            <Link href='/games/tic-tac-toe'>Tic tac toe</Link>
                         </li>
                         <li>
-                            <Link href='/games/tick-tack-toe'>Processing</Link>
+                            <Link href='/games/processing'>Processing</Link>
                         </li>
                     </ul>
                 </div>
@@ -143,13 +141,17 @@ const Home: NextPage = () => {
                 </div>
                 <div className='m-2'>
                     <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-                        Tick tack toe:
+                        Tic tac toe:
                     </h3>
                     <p>
                         I actually limited myself with this one. It was meant to
                         be a 3x3 by default that could be expanded to nxn on
-                        size. I decided implementing it 3x3 was enough (but
-                        someday probably it will be my next thing to work on).
+                        size. I decided implementing it 3x3 was enough (
+                        <span className='decoration-dashed	'>
+                            but someday probably it will be my next thing to
+                            work on.
+                        </span>
+                        I actually finished it, yay ).
                     </p>
                     <p>
                         This project was also done while being on Conatel on my

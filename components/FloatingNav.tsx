@@ -23,8 +23,8 @@ const FloatingNav = () => {
             optional: 'It has difficulties and options, wohoo',
         },
         {
-            name: 'Tick tack toe',
-            slug: '/games/tick-tack-toe',
+            name: 'Tic tac toe',
+            slug: '/games/tic-tac-toe',
             optional: 'The game you have probably played tons of times already',
         },
         {
