@@ -58,7 +58,7 @@ function ProcessingLayout({ children }: PropsWithChildren) {
                     )
                 })}
             </div>
-            <Link href='/games/processing/'>Vista Normal</Link>
+            <Link className="ml-2" href='/games/processing/'>Vista Normal</Link>
             <Link href='/games/processing/triangles'>Vista Triángulos</Link>
             <ColorContext.Provider value={colorActual}>
                 {children}
