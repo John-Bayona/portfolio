@@ -9,7 +9,7 @@ export default function triangles() {
 
     let triangleRef = useRef<HTMLDivElement>(null)
     function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        let target = event.currentTarget //as HTMLDivElement
+        let target = event.target as HTMLDivElement
         if (!target) return
         target.style.fill = colorActual.color
     }
